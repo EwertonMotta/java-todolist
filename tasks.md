@@ -50,11 +50,11 @@ Etapa 5: A Porta de Entrada Web (Os "Controllers")
 [X] Retorne os dados usando ResponseEntity para controlar corretamente os HTTP Status Codes (200 OK, 201 Created, 204 No Content).
 
 Etapa 6: Tratamento de Erros Global (O "Handler.php")
-[ ] Crie uma classe GlobalExceptionHandler anotada com @ControllerAdvice.
+[X] Crie uma classe GlobalExceptionHandler anotada com @ControllerAdvice.
 
-[ ] Capture a exceção MethodArgumentNotValidException (quando a validação do DTO falha) e retorne um JSON formatado com os campos que deram erro (Status 400).
+[X] Capture a exceção MethodArgumentNotValidException (quando a validação do DTO falha) e retorne um JSON formatado com os campos que deram erro (Status 400).
 
-[ ] Capture exceções de "Registro não encontrado" (quando buscar uma task por ID que não existe) e retorne um Status 404.
+[X] Capture exceções de "Registro não encontrado" (quando buscar uma task por ID que não existe) e retorne um Status 404.
 
 Etapa 7: Documentação com Swagger
 [ ] Adicione a dependência springdoc-openapi-starter-webmvc-ui no seu pom.xml.
