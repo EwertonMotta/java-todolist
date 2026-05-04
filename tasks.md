@@ -41,13 +41,13 @@ Etapa 4: Lógica de Negócios e DTOs (Os "Services" e "Form Requests")
 [X] Implemente os métodos de negócio (criar, listar, buscar por ID, atualizar, concluir tarefa, deletar). Faça a conversão entre DTO e Entidade aqui (ou use uma lib como MapStruct, se quiser um desafio extra).
 
 Etapa 5: A Porta de Entrada Web (Os "Controllers")
-[ ] Crie a classe TaskController anotada com @RestController e @RequestMapping("/api/tasks").
+[X] Crie a classe TaskController anotada com @RestController e @RequestMapping("/api/tasks").
 
-[ ] Implemente os endpoints (GET, POST, PUT, DELETE), injetando o TaskService.
+[X] Implemente os endpoints (GET, POST, PUT, DELETE), injetando o TaskService.
 
-[ ] Use @Valid no parâmetro do POST/PUT para ativar as validações do DTO (equivalente a injetar um FormRequest no método do Laravel).
+[X] Use @Valid no parâmetro do POST/PUT para ativar as validações do DTO (equivalente a injetar um FormRequest no método do Laravel).
 
-[ ] Retorne os dados usando ResponseEntity para controlar corretamente os HTTP Status Codes (200 OK, 201 Created, 204 No Content).
+[X] Retorne os dados usando ResponseEntity para controlar corretamente os HTTP Status Codes (200 OK, 201 Created, 204 No Content).
 
 Etapa 6: Tratamento de Erros Global (O "Handler.php")
 [ ] Crie uma classe GlobalExceptionHandler anotada com @ControllerAdvice.
