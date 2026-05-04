@@ -1,10 +1,10 @@
 API de Gerenciamento de Tarefas (To-Do List)
-Stack alvo: Java 17+ (ou 21), Spring Boot 3, PostgreSQL, Flyway, JUnit/Mockito, Swagger (Springdoc) e Docker.
+Stack alvo: Java 17+ (ou 21), Spring Boot 3, MySQL, Flyway, JUnit/Mockito, Swagger (Springdoc) e Docker.
 
 Etapa 1: Setup e Configuração (O "composer create-project")
 [X] Acesse o Spring Initializr (start.spring.io) e crie o projeto usando Maven.
 
-[X] Adicione as dependências essenciais: Spring Web, Spring Data JPA, PostgreSQL Driver, Lombok, Validation, Flyway Migration.
+[X] Adicione as dependências essenciais: Spring Web, Spring Data JPA, MySQL Driver, Lombok, Validation, Flyway Migration.
 
 [X] Configure o arquivo src/main/resources/application.yml (o equivalente ao .env + config/ do Laravel) com as credenciais do banco de dados local.
 
@@ -17,16 +17,17 @@ Atenção: No Java corporativo, raramente usamos a sincronização automática d
 
 [X] Escreva o SQL puro para criar a tabela tasks (id UUID ou BIGINT, title, description, status, due_date, created_at, updated_at).
 
-[X] Rode a aplicação para garantir que o Flyway executou a migration no PostgreSQL.
+[X] Rode a aplicação para garantir que o Flyway executou a migration no MySQL.
 
 Etapa 3: Domínio e Persistência (O "Eloquent" dividido em dois)
-[ ] Crie a classe Entidade Task anotada com @Entity e @Table. Mapeie os atributos para as colunas do banco.
 
-[ ] Use anotações do Lombok (@Getter, @Setter, @NoArgsConstructor, etc.) para evitar o código boilerplate (getters e setters manuais).
+[X] Crie a classe Entidade Task anotada com @Entity e @Table. Mapeie os atributos para as colunas do banco.
 
-[ ] Crie a interface TaskRepository estendendo JpaRepository<Task, Long>.
+[X] Use anotações do Lombok (@Getter, @Setter, @NoArgsConstructor, etc.) para evitar o código boilerplate (getters e setters manuais).
 
-[ ] Crie um método customizado na interface, como List<Task> findByStatus(String status);. O Spring implementará a query magicamente.
+[X] Crie a interface TaskRepository estendendo JpaRepository<Task, Long>.
+
+[X] Crie um método customizado na interface, como List<Task> findByStatus(String status);. O Spring implementará a query magicamente.
 
 Etapa 4: Lógica de Negócios e DTOs (Os "Services" e "Form Requests")
 [ ] Crie as classes DTO (Data Transfer Objects): TaskRequestDTO (para entrada) e TaskResponseDTO (para saída). Dica: Use Java Records, introduzidos no Java 14, são perfeitos para DTOs.
@@ -76,6 +77,6 @@ Estágio 2: Imagem do JRE (ex: Eclipse Temurin ou Amazon Corretto) menor e mais 
 
 [ ] Crie um docker-compose.yml que levante dois containers:
 
-O serviço do banco de dados (PostgreSQL).
+O serviço do banco de dados (MySQL).
 
 O serviço da sua aplicação Spring (dependendo do banco de dados estar pronto).
