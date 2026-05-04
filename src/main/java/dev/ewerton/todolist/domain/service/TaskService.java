@@ -58,13 +58,11 @@ public class TaskService {
     }
 
     @Transactional
-    public boolean deleteTask(UUID id) {
-        if (!taskRepository.existsById(id)) {
-            return false;
-        }
+    public void deleteTask(UUID id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tarefa não encontrada com o ID: " + id));
 
-        taskRepository.deleteById(id);
-        return true;
+        taskRepository.delete(task);
     }
 
     private TaskResponseDTO mapToResponse(Task task) {
