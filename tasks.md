@@ -30,15 +30,15 @@ Etapa 3: Domínio e Persistência (O "Eloquent" dividido em dois)
 [X] Crie um método customizado na interface, como List<Task> findByStatus(String status);. O Spring implementará a query magicamente.
 
 Etapa 4: Lógica de Negócios e DTOs (Os "Services" e "Form Requests")
-[ ] Crie as classes DTO (Data Transfer Objects): TaskRequestDTO (para entrada) e TaskResponseDTO (para saída). Dica: Use Java Records, introduzidos no Java 14, são perfeitos para DTOs.
+[X] Crie as classes DTO (Data Transfer Objects): TaskRequestDTO (para entrada) e TaskResponseDTO (para saída). Dica: Use Java Records, introduzidos no Java 14, são perfeitos para DTOs.
 
-[ ] Adicione anotações de validação no TaskRequestDTO (ex: @NotBlank(message = "Título é obrigatório"), @FutureOrPresent).
+[X] Adicione anotações de validação no TaskRequestDTO (ex: @NotBlank(message = "Título é obrigatório"), @FutureOrPresent).
 
-[ ] Crie a classe TaskService anotada com @Service.
+[X] Crie a classe TaskService anotada com @Service.
 
-[ ] Injete o TaskRepository no TaskService via construtor.
+[X] Injete o TaskRepository no TaskService via construtor.
 
-[ ] Implemente os métodos de negócio (criar, listar, buscar por ID, atualizar, concluir tarefa, deletar). Faça a conversão entre DTO e Entidade aqui (ou use uma lib como MapStruct, se quiser um desafio extra).
+[X] Implemente os métodos de negócio (criar, listar, buscar por ID, atualizar, concluir tarefa, deletar). Faça a conversão entre DTO e Entidade aqui (ou use uma lib como MapStruct, se quiser um desafio extra).
 
 Etapa 5: A Porta de Entrada Web (Os "Controllers")
 [ ] Crie a classe TaskController anotada com @RestController e @RequestMapping("/api/tasks").
