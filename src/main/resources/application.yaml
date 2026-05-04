@@ -1,3 +1,14 @@
 spring:
   application:
     name: todolist
+
+  datasource:
+    url: JDBC:mysql://localhost:3306/todolist
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
